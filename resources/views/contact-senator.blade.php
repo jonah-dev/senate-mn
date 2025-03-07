@@ -1,7 +1,10 @@
-<?php if (isset($errors) && count($errors) > 0): ?>
+
+<h1>Contact Your Senator</h1>
+
+<?php if ($errors->any()): ?>
     <div class="alert alert-danger">
         <ul>
-            <?php foreach ($errors as $error): ?>
+            <?php foreach ($errors->all() as $error): ?>
                 <li><?= $error ?></li>
             <?php endforeach; ?>
         </ul>
@@ -81,5 +84,9 @@
     .alert-success {
         background-color: #dff0d8;
         color: #3c763d;
+    }
+
+    h1 {
+        text-align: center;
     }
 </style>
