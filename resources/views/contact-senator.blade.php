@@ -67,4 +67,19 @@
     button:hover {
         background-color: #555;
     }
+
+    .alert {
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    .alert-danger {
+        background-color: #f2dede;
+        color: #a94442;
+    }
+
+    .alert-success {
+        background-color: #dff0d8;
+        color: #3c763d;
+    }
 </style>

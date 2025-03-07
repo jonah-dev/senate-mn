@@ -29,6 +29,6 @@ class ContactSenatorController extends Controller
 
         Mail::to($senator->email)->queue($mail);
 
-        Redirect::back()->with('message', 'Your message has been sent!');
+        return Redirect::back()->with('message', 'Your message has been sent!');
     }
 }
