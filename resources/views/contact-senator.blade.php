@@ -8,7 +8,14 @@
     </div>
 <?php endif; ?>
 
-<form method="post" action="">
+<?php if (session()->has('message')): ?>
+    <div class="alert alert-success">
+        <?= session('message') ?>
+    </div>
+<?php endif; ?>
+
+<form method="post" action="/contact-senator">
+    @csrf
     <fieldset>
         <legend>Contact Your Senator</legend>
         <label for="senator_id">
@@ -31,3 +38,33 @@
         <button type="submit">Send</button>
     </fieldset>
 </form>
+
+<style>
+    fieldset {
+        width: 30%;
+        margin: 0 auto;
+    }
+
+    label {
+        display: block;
+        margin-top: 10px;
+    }
+
+    input, textarea {
+        width: 100%;
+        padding: 5px;
+    }
+
+    button {
+        padding: 5px 10px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    button:hover {
+        background-color: #555;
+    }
+</style>

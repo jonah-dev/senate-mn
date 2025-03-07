@@ -16,19 +16,19 @@ class SenatorContacted extends Mailable
     use Queueable, SerializesModels;
 
     private Senator $senator;
-    private string $message;
+    private string $body;
     private string $senderLastName;
     private string $senderEmail;
 
     /**
      * Create a new message instance.
      */
-    public function __construct(Senator $senator, string $message, string $senderLastName, string $senderEmail)
+    public function __construct(Senator $senator, string $body, string $senderLastName, string $senderEmail)
     {
         $this->senator = $senator;
         $this->senderLastName = $senderLastName;
         $this->senderEmail = $senderEmail;
-        $this->message = $message;
+        $this->body = $body;
     }
 
     /**
@@ -51,7 +51,7 @@ class SenatorContacted extends Mailable
             view: 'emails.senator-contacted',
             with: [
                 'senator' => $this->senator,
-                'message' => $this->message,
+                'body' => $this->body,
                 'senderLastName' => $this->senderLastName,
                 'senderEmail' => $this->senderEmail,
             ],

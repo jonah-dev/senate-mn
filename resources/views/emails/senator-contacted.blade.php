@@ -2,7 +2,7 @@
 
 <p>Dear {{ $senator->fullName }},</p>
 
-<p>{{ $message }}</p>
+<p>{{ $body }}</p>
 
 <br/>
 

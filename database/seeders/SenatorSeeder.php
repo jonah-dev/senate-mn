@@ -12,6 +12,7 @@ class SenatorSeeder extends Seeder
      */
     public function run(): void
     {
+        $faker = \Faker\Factory::create();
         $senators = [
             [
                 'senator_id' => 'senator-1',
@@ -19,6 +20,24 @@ class SenatorSeeder extends Seeder
                 'last_name' => 'Mandli',
                 'email' => 'jmandli12@gmail.com'
             ],
+            [
+                'senator_id' => 'senator-2',
+                'first_name' => $faker->firstName,
+                'last_name' => $faker->lastName,
+                'email' => $faker->email
+            ],
+            [
+                'senator_id' => 'senator-3',
+                'first_name' => $faker->firstName,
+                'last_name' => $faker->lastName,
+                'email' => $faker->email
+            ],
+            [
+                'senator_id' => 'senator-4',
+                'first_name' => $faker->firstName,
+                'last_name' => $faker->lastName,
+                'email' => $faker->email
+            ]
         ];
 
         foreach ($senators as $senator) {
